@@ -8,6 +8,7 @@ import Look from "./components/Filter";
 export default function App() {
   const [moviesList, setMoviesList] = useState(Data);
   const [nameSearch, setNameSearch] = useState("");
+  const [ratingSearch, setRatingSearch] = useState(0);
   const addNewMovie = (newMovie) => {
     setMoviesList([...moviesList, newMovie]);
   };
@@ -16,10 +17,10 @@ export default function App() {
       <header className="h">
         <img src="movie-icon.svg" className="movie-image" alt="Movie icon" ></img>
         React Movie app
-      <Look setNameSearch={setNameSearch}/>
+      <Look setNameSearch={setNameSearch} setRatingSearch={setRatingSearch}/>
       <Add addNewMovie={addNewMovie} />
       </header>
-      <MoviesList moviesList={moviesList} nameSearch={nameSearch}/>
+      <MoviesList moviesList={moviesList} nameSearch={nameSearch} ratingSearch={ratingSearch}/>
     </div>
   );
 }

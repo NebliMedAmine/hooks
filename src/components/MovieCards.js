@@ -1,3 +1,4 @@
+import ReactStars from "react-stars";
 const MovieCard = ({ el }) => {
   return (
     <div className="movie-card-container">
@@ -8,7 +9,17 @@ const MovieCard = ({ el }) => {
       <div className="movie-info">
       <h2>Movie Details</h2>          
       <h1 className="title">{el.title}</h1>
-      <h4>Rating:{el.rating}</h4>
+      <h4>Rating:{el.rating}
+      {
+            <ReactStars
+              count={5}
+              value={el.rating}
+              size={24}
+              color2={"#ffd700"}
+              edit={false}
+            />
+          }
+      </h4>
       <p className="u">{el.description}</p>
       <span>{el.date}</span>
       </div>
